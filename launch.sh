@@ -37,7 +37,7 @@ sudo chmod 0755 /etc/supervisord.conf
 chmod +x ether1node
 sudo mkdir /etc/supervisor/
 sudo mkdir /etc/supervisor/conf.d
-sudo cp ether1node /etc/supervisor/conf.d/geth.conf
+sudo mv ether1node /etc/supervisor/conf.d/geth.conf
 
 
 sudo supervisord --configuration /etc/supervisord.conf
