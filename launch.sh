@@ -12,7 +12,7 @@ echo "autorestart=true" >> ether1node
 echo "user=ether1node" >> ether1node
 echo "stderr_logfile=/var/log/geth.err.log" >> ether1node
 echo "stdout_logfile=/var/log/geth.out.log" >> ether1node
-echo "environment=HOME=$HOME,USER=ether1node" >> ether1nodode
+echo "environment=HOME=/home/ether1node,USER=ether1node" >> ether1node
 echo "[unix_http_server]" > supervisor.conf
 echo "file=/var/run/supervisor.sock   ; (the path to the socket file)" >> supervisor.conf
 echo "chmod=0700                       ; sockef file mode (default 0700)" >> supervisor.conf
