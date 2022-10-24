@@ -40,4 +40,4 @@ sudo mkdir /etc/supervisor/conf.d
 sudo cp ether1node /etc/supervisor/conf.d/geth.conf
 
 
-sudo supervisord --nodaemon --configuration /etc/supervisord.conf
+sudo supervisord --configuration /etc/supervisord.conf
