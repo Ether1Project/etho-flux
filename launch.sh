@@ -1,5 +1,23 @@
 #!/bin/bash
 
+# Check that we have the env vars NODE, DUID and WALLET in place                                    
+if [ -z "$WALLET" ]                                                                                 
+then                                                                                                
+        echo "\$WALLET is empty. Make sure you define the environment variable."                    
+        exit;                                                                                       
+fi                                                                                                  
+if [ -z "$DUID" ]                                                                                        
+then                                                                                                      
+        echo "\$DUID is empty. Make sure you define the environment variable."                            
+        exit;                                                                                             
+fi                                                                                                        
+if [ -z "$NODE" ]                                                                                         
+then                                                                                                      
+        echo "\$NODE is empty. Make sure you define the environment variable."                            
+        exit;                                                                                             
+fi                                                                                                        
+
+
 sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/sbin/geth
 /usr/sbin/geth --ethofs=$NODE --ethofsUser=$UID --ethofsWallet=$WALLET --ethofsInit
 sleep 3
@@ -35,8 +53,16 @@ sudo mv supervisor.conf /etc/supervisord.conf
 sudo chmod 0755 /etc/supervisord.conf
 
 chmod +x ether1node
-sudo mkdir /etc/supervisor/
-sudo mkdir /etc/supervisor/conf.d
+if [ ! -d "/etc/supervisor" ]                                                                             
+then                                                                                                      
+        sudo mkdir /etc/supervisor/                                                                       
+fi                                                                                                        
+if [ ! -d "/etc/supervisori/conf.d" ]                                                                     
+then                                                                                                      
+        sudo mkdir /etc/supervisor/conf.d                                                                 
+fi                                                                                                        
+
+
 sudo mv ether1node /etc/supervisor/conf.d/geth.conf
 
 
