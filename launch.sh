@@ -57,7 +57,7 @@ if [ ! -d "/etc/supervisor" ]
 then                                                                                                      
         sudo mkdir /etc/supervisor/                                                                       
 fi                                                                                                        
-if [ ! -d "/etc/supervisori/conf.d" ]                                                                     
+if [ ! -d "/etc/supervisor/conf.d" ]                                                                     
 then                                                                                                      
         sudo mkdir /etc/supervisor/conf.d                                                                 
 fi                                                                                                        
