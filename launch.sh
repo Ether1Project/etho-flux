@@ -19,12 +19,12 @@ fi
 
 
 sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/sbin/geth
-/usr/sbin/geth --ethofs=$NODE --ethofsUser=$UID --ethofsWallet=$WALLET --ethofsInit
+/usr/sbin/geth --ethofs=$NODE --ethofsUser=$DUID --ethofsWallet=$WALLET --ethofsInit
 sleep 3
-/usr/sbin/geth --ethofs=$NODE --ethofsUser=$UID --ethofsWallet=$WALLET --ethofsConfig
+/usr/sbin/geth --ethofs=$NODE --ethofsUser=$DUID --ethofsWallet=$WALLET --ethofsConfig
 sleep 3
 echo "[program:geth]" > ether1node
-echo "command=/usr/sbin/geth --ethofs=$NODE --ethofsUser=$UID --ethofsWallet=$WALLET" >> ether1node
+echo "command=/usr/sbin/geth --ethofs=$NODE --ethofsUser=$DUID --ethofsWallet=$WALLET" >> ether1node
 echo "autostart=true" >> ether1node
 echo "autorestart=true" >> ether1node
 echo "user=ether1node" >> ether1node
