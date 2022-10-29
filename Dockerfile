@@ -22,7 +22,7 @@ USER $USER
 WORKDIR $HOME
 
 RUN sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/sbin/geth
-RUN wget https://raw.githubusercontent.com/Ether1Project/etho-flux/main/launch.sh
+RUN wget --no-cache https://raw.githubusercontent.com/Ether1Project/etho-flux/main/launch.sh
 RUN sudo chown ether1node.ether1node launch.sh
 
 EXPOSE  4001 5001 30305 30305/udp
